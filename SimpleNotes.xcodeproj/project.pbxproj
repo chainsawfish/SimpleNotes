@@ -17,6 +17,8 @@
 		F6B966092833D68800FA56CF /* SimpleNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B966082833D68800FA56CF /* SimpleNotesTests.swift */; };
 		F6B966132833D68800FA56CF /* SimpleNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B966122833D68800FA56CF /* SimpleNotesUITests.swift */; };
 		F6B966152833D68800FA56CF /* SimpleNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B966142833D68800FA56CF /* SimpleNotesUITestsLaunchTests.swift */; };
+		F6B966252834B1BA00FA56CF /* NoteData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B966232834B1BA00FA56CF /* NoteData+CoreDataClass.swift */; };
+		F6B966262834B1BA00FA56CF /* NoteData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B966242834B1BA00FA56CF /* NoteData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		F6B9660E2833D68800FA56CF /* SimpleNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B966122833D68800FA56CF /* SimpleNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNotesUITests.swift; sourceTree = "<group>"; };
 		F6B966142833D68800FA56CF /* SimpleNotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F6B966232834B1BA00FA56CF /* NoteData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6B966242834B1BA00FA56CF /* NoteData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,10 @@
 		F6B965ED2833D68500FA56CF /* SimpleNotes */ = {
 			isa = PBXGroup;
 			children = (
-				F6B965EE2833D68500FA56CF /* AppDelegate.swift */,
+				F6B966272834B22200FA56CF /* Model */,
+				F6B966282834B23E00FA56CF /* View */,
 				F6B965F02833D68500FA56CF /* SceneDelegate.swift */,
-				F6B965F22833D68500FA56CF /* ViewController.swift */,
+				F6B965EE2833D68500FA56CF /* AppDelegate.swift */,
 				F6B965F42833D68500FA56CF /* Main.storyboard */,
 				F6B965FA2833D68800FA56CF /* Assets.xcassets */,
 				F6B965FC2833D68800FA56CF /* LaunchScreen.storyboard */,
@@ -128,6 +133,23 @@
 				F6B966142833D68800FA56CF /* SimpleNotesUITestsLaunchTests.swift */,
 			);
 			path = SimpleNotesUITests;
+			sourceTree = "<group>";
+		};
+		F6B966272834B22200FA56CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6B966232834B1BA00FA56CF /* NoteData+CoreDataClass.swift */,
+				F6B966242834B1BA00FA56CF /* NoteData+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F6B966282834B23E00FA56CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6B965F22833D68500FA56CF /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +286,8 @@
 				F6B965F32833D68500FA56CF /* ViewController.swift in Sources */,
 				F6B965EF2833D68500FA56CF /* AppDelegate.swift in Sources */,
 				F6B965F12833D68500FA56CF /* SceneDelegate.swift in Sources */,
+				F6B966262834B1BA00FA56CF /* NoteData+CoreDataProperties.swift in Sources */,
+				F6B966252834B1BA00FA56CF /* NoteData+CoreDataClass.swift in Sources */,
 				F6B965F92833D68500FA56CF /* SimpleNotes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
