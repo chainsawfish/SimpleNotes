@@ -14,10 +14,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+        tableView.register(UINib(nibName: "CustomViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        // accessing context from core data
+        //        (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
     }
-
-
+    
+    
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
@@ -27,8 +30,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "first"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomViewCell
+        cell.labelTitle.text = "HELLO"
         return cell
     }
     

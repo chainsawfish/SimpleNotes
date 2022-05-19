@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6868E782835FAB6008D34F2 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6868E762835FAB6008D34F2 /* CustomViewCell.swift */; };
+		F6868E792835FAB6008D34F2 /* CustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6868E772835FAB6008D34F2 /* CustomViewCell.xib */; };
 		F6B965EF2833D68500FA56CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B965EE2833D68500FA56CF /* AppDelegate.swift */; };
 		F6B965F12833D68500FA56CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B965F02833D68500FA56CF /* SceneDelegate.swift */; };
 		F6B965F32833D68500FA56CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B965F22833D68500FA56CF /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6868E762835FAB6008D34F2 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		F6868E772835FAB6008D34F2 /* CustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewCell.xib; sourceTree = "<group>"; };
 		F6B965EB2833D68500FA56CF /* SimpleNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B965EE2833D68500FA56CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B965F02833D68500FA56CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 			children = (
 				F6B966232834B1BA00FA56CF /* NoteData+CoreDataClass.swift */,
 				F6B966242834B1BA00FA56CF /* NoteData+CoreDataProperties.swift */,
+				F6868E762835FAB6008D34F2 /* CustomViewCell.swift */,
+				F6868E772835FAB6008D34F2 /* CustomViewCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6B965FE2833D68800FA56CF /* LaunchScreen.storyboard in Resources */,
+				F6868E792835FAB6008D34F2 /* CustomViewCell.xib in Resources */,
 				F6B965FB2833D68800FA56CF /* Assets.xcassets in Resources */,
 				F6B965F62833D68500FA56CF /* Main.storyboard in Resources */,
 			);
@@ -285,6 +292,7 @@
 			files = (
 				F6B965F32833D68500FA56CF /* ViewController.swift in Sources */,
 				F6B965EF2833D68500FA56CF /* AppDelegate.swift in Sources */,
+				F6868E782835FAB6008D34F2 /* CustomViewCell.swift in Sources */,
 				F6B965F12833D68500FA56CF /* SceneDelegate.swift in Sources */,
 				F6B966262834B1BA00FA56CF /* NoteData+CoreDataProperties.swift in Sources */,
 				F6B966252834B1BA00FA56CF /* NoteData+CoreDataClass.swift in Sources */,
