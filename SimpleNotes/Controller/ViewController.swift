@@ -11,7 +11,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // reference to context
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var notes : [NoteData]?
     
     override func viewDidLoad() {
@@ -25,17 +26,8 @@ class ViewController: UIViewController {
         
     }
     
-    func fetchData() {
-        do {
-            self.notes = try context.fetch(NoteData.fetchRequest())
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        catch {
-            print("Error fetching data from NoteData \(error)")
-        }
+    @IBAction func newNoteAddPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "mainToNewNote", sender: self)
     }
     
    
@@ -55,5 +47,45 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // MARK: delete note with swipe left functionality
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
+            let noteToRemove = self.notes![indexPath.row]
+            Constants.context.delete(noteToRemove)
+            do {
+                try Constants.context.save()
+            } catch {
+                print("error deletion and saving after \(error)")
+            }
+            
+            self.fetchData()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    //MARK: select row to edit
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "mainToNote", sender: self)
+    }
     
+}
+
+// MARK: here are functions for VC
+extension ViewController {
+    func fetchData() {
+        do {
+            self.notes = try Constants.context.fetch(NoteData.fetchRequest())
+            reloadDataAsync()
+            
+        }
+        catch {
+            print("Error fetching data from NoteData \(error)")
+        }
+    }
+    
+    func reloadDataAsync(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F6868E782835FAB6008D34F2 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6868E762835FAB6008D34F2 /* CustomViewCell.swift */; };
 		F6868E792835FAB6008D34F2 /* CustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6868E772835FAB6008D34F2 /* CustomViewCell.xib */; };
+		F6A7DFA7283910EF009333F6 /* NewNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7DFA6283910EF009333F6 /* NewNoteController.swift */; };
+		F6A7DFA928391683009333F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7DFA828391683009333F6 /* Constants.swift */; };
 		F6B965EF2833D68500FA56CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B965EE2833D68500FA56CF /* AppDelegate.swift */; };
 		F6B965F12833D68500FA56CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B965F02833D68500FA56CF /* SceneDelegate.swift */; };
 		F6B965F32833D68500FA56CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B965F22833D68500FA56CF /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		F6868E762835FAB6008D34F2 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		F6868E772835FAB6008D34F2 /* CustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewCell.xib; sourceTree = "<group>"; };
+		F6A7DFA6283910EF009333F6 /* NewNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteController.swift; sourceTree = "<group>"; };
+		F6A7DFA828391683009333F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F6B965EB2833D68500FA56CF /* SimpleNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B965EE2833D68500FA56CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B965F02833D68500FA56CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				F6868E762835FAB6008D34F2 /* CustomViewCell.swift */,
+				F6A7DFA6283910EF009333F6 /* NewNoteController.swift */,
 				F6B965F22833D68500FA56CF /* ViewController.swift */,
 			);
 			path = Controller;
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				F6B966232834B1BA00FA56CF /* NoteData+CoreDataClass.swift */,
+				F6A7DFA828391683009333F6 /* Constants.swift */,
 				F6B966242834B1BA00FA56CF /* NoteData+CoreDataProperties.swift */,
 			);
 			path = Model;
@@ -304,7 +310,9 @@
 				F6B965F12833D68500FA56CF /* SceneDelegate.swift in Sources */,
 				F6B966262834B1BA00FA56CF /* NoteData+CoreDataProperties.swift in Sources */,
 				F6B966252834B1BA00FA56CF /* NoteData+CoreDataClass.swift in Sources */,
+				F6A7DFA7283910EF009333F6 /* NewNoteController.swift in Sources */,
 				F6B965F92833D68500FA56CF /* SimpleNotes.xcdatamodeld in Sources */,
+				F6A7DFA928391683009333F6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

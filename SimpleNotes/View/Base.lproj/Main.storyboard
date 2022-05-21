@@ -24,6 +24,9 @@
                                 <rect key="frame" x="361" y="93" width="33" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+"/>
+                                <connections>
+                                    <action selector="newNoteAddPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZUn-0h-gvy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,14 +70,41 @@
         <!--NewNoteView-->
         <scene sceneID="lE3-LK-SPh">
             <objects>
-                <viewController id="wt9-vP-Gxq" userLabel="NewNoteView" sceneMemberID="viewController">
+                <viewController id="wt9-vP-Gxq" userLabel="NewNoteView" customClass="NewNoteController" customModule="SimpleNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ym-E4-drn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i53-7o-q5p">
+                                <rect key="frame" x="27" y="160" width="360" height="678"/>
+                                <color key="backgroundColor" red="0.07177789068444955" green="0.96849877379604221" blue="0.78957583624362138" alpha="0.10002125850340136" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="48v-kV-Htv"/>
+                                    <constraint firstAttribute="height" constant="678" id="7em-BM-k7w"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NtK-44-XPI">
+                                <rect key="frame" x="50" y="118" width="290" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WrL-L0-wy8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WrL-L0-wy8" firstAttribute="bottom" secondItem="i53-7o-q5p" secondAttribute="bottom" constant="24" id="04c-UV-qvk"/>
+                            <constraint firstItem="i53-7o-q5p" firstAttribute="centerX" secondItem="7Ym-E4-drn" secondAttribute="centerX" id="3Wk-h4-fOJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f1a-0T-6UO"/>
+                    <connections>
+                        <outlet property="newNoteTitle" destination="NtK-44-XPI" id="Bjg-7f-HdK"/>
+                        <outlet property="textView" destination="i53-7o-q5p" id="27O-c2-9Ju"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYP-CT-GkX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,6 +130,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
