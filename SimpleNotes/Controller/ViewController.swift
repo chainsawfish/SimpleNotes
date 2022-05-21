@@ -10,28 +10,48 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    // reference to context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var notes : [NoteData]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        fetchData()
+
         tableView.register(UINib(nibName: "CustomViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        // accessing context from core data
-        //        (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
         
     }
     
+    func fetchData() {
+        do {
+            self.notes = try context.fetch(NoteData.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        catch {
+            print("Error fetching data from NoteData \(error)")
+        }
+    }
+    
+   
     
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return notes?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomViewCell
-        cell.labelTitle.text = "HELLO"
+        guard let singleNote = self.notes?[indexPath.row] else {return cell}
+        cell.labelTitle.text = singleNote.title
         return cell
     }
     

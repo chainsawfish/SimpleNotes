@@ -86,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F64C6A852837BDCE0043110C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6868E762835FAB6008D34F2 /* CustomViewCell.swift */,
+				F6B965F22833D68500FA56CF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F6B965E22833D68500FA56CF = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +120,9 @@
 			children = (
 				F6B966272834B22200FA56CF /* Model */,
 				F6B966282834B23E00FA56CF /* View */,
-				F6B965F02833D68500FA56CF /* SceneDelegate.swift */,
+				F64C6A852837BDCE0043110C /* Controller */,
 				F6B965EE2833D68500FA56CF /* AppDelegate.swift */,
-				F6B965F42833D68500FA56CF /* Main.storyboard */,
+				F6B965F02833D68500FA56CF /* SceneDelegate.swift */,
 				F6B965FA2833D68800FA56CF /* Assets.xcassets */,
 				F6B965FC2833D68800FA56CF /* LaunchScreen.storyboard */,
 				F6B965FF2833D68800FA56CF /* Info.plist */,
@@ -144,8 +153,6 @@
 			children = (
 				F6B966232834B1BA00FA56CF /* NoteData+CoreDataClass.swift */,
 				F6B966242834B1BA00FA56CF /* NoteData+CoreDataProperties.swift */,
-				F6868E762835FAB6008D34F2 /* CustomViewCell.swift */,
-				F6868E772835FAB6008D34F2 /* CustomViewCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,7 +160,8 @@
 		F6B966282834B23E00FA56CF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F6B965F22833D68500FA56CF /* ViewController.swift */,
+				F6B965F42833D68500FA56CF /* Main.storyboard */,
+				F6868E772835FAB6008D34F2 /* CustomViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

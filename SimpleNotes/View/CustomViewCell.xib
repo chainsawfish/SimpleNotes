@@ -32,13 +32,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSE-mF-g1v">
-                                <rect key="frame" x="50" y="10" width="175" height="30"/>
+                                <rect key="frame" x="50" y="10" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgc-Vh-3Zt">
-                                <rect key="frame" x="250" y="10" width="50" height="30"/>
+                                <rect key="frame" x="275" y="10" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="vns-81-j2W"/>
                                 </constraints>
@@ -49,9 +49,11 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="width" constant="300" id="2Je-tH-E3a"/>
+                            <constraint firstItem="LSE-mF-g1v" firstAttribute="leading" secondItem="aTB-c7-aXA" secondAttribute="trailing" constant="20" id="3uT-FL-d7h"/>
+                            <constraint firstItem="LSE-mF-g1v" firstAttribute="centerX" secondItem="oyS-tn-bhX" secondAttribute="centerX" id="H5w-Uj-nQ8"/>
                             <constraint firstAttribute="height" constant="50" id="WmT-ws-Kyw"/>
                             <constraint firstItem="Mgc-Vh-3Zt" firstAttribute="leading" secondItem="LSE-mF-g1v" secondAttribute="trailing" constant="25" id="cE0-iB-v2h"/>
-                            <constraint firstItem="LSE-mF-g1v" firstAttribute="leading" secondItem="aTB-c7-aXA" secondAttribute="trailing" constant="20" id="hVB-Wd-MJ2"/>
+                            <constraint firstItem="LSE-mF-g1v" firstAttribute="leading" secondItem="oyS-tn-bhX" secondAttribute="leading" constant="50" id="cJB-Y8-8RK"/>
                             <constraint firstAttribute="bottom" secondItem="aTB-c7-aXA" secondAttribute="bottom" constant="10" id="wej-NL-pgY"/>
                         </constraints>
                     </stackView>
