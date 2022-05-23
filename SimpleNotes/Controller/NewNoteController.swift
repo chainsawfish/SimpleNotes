@@ -17,22 +17,19 @@ class NewNoteController: UIViewController {
         super.viewDidLoad()
 
     }
-    
+    // TODO: figure out how to refresh note list on ViewController
     func saveNote() {
         let newNote = NoteData(context: Constants.context)
         newNote.title = newNoteTitle.text
         newNote.text = textView.text
         do {
            try Constants.context.save()
-            guard let firstVC = presentingViewController as? ViewController else {return}
-            DispatchQueue.main.async {
-                firstVC.fetchData()
-            }
+            
         }
         catch {
             print("Error saving context data \(error)")
         }
-        
+
     }
     
     

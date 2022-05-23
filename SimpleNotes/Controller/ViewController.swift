@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     
     var notes : [NoteData]?
     
+    // MARK: reload all cells after creating or editing notes
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+        reloadDataAsync()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -64,7 +69,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     //MARK: select row to edit
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        //TODO: prepare for seague and set data, and make vc for note
         performSegue(withIdentifier: "mainToNote", sender: self)
     }
     
