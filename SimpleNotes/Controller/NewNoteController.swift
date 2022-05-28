@@ -8,7 +8,9 @@
 import UIKit
 
 class NewNoteController: UIViewController {
-
+    
+    var tempTitle = ""
+    var tempText = ""
     @IBOutlet weak var newNoteTitle: UITextField!
     @IBOutlet weak var noteTextField: UITextView!
     
@@ -36,7 +38,10 @@ class NewNoteController: UIViewController {
         }
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        newNoteTitle.text = tempTitle
+        noteTextField.text = tempText
+    }
     
     
 

@@ -44,65 +44,12 @@
                     <connections>
                         <outlet property="tableView" destination="H3b-Z7-9fu" id="sMc-GP-9WS"/>
                         <segue destination="wt9-vP-Gxq" kind="show" identifier="mainToNewNote" id="Zw0-Tw-3h5"/>
-                        <segue destination="VPJ-9Z-X32" kind="show" identifier="mainToOldNote" id="ZfR-wn-jH7"/>
+                        <segue destination="wt9-vP-Gxq" kind="show" identifier="mainToOldNote" id="M3o-cr-y4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="886.95652173913049" y="63.616071428571423"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Z5A-Jf-7JV">
-            <objects>
-                <viewController id="VPJ-9Z-X32" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HWo-7g-bu5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e83-Hi-hiU">
-                                <rect key="frame" x="27" y="145" width="360" height="678"/>
-                                <color key="backgroundColor" red="0.071777890679999998" green="0.96849877380000005" blue="0.78957583620000005" alpha="0.1000212585" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="678" id="KFG-6k-M54"/>
-                                    <constraint firstAttribute="width" constant="360" id="b1C-Q4-Buk"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
-                            </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAh-Bu-EdB">
-                                <rect key="frame" x="50" y="103" width="290" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyv-CH-StU">
-                                <rect key="frame" x="294" y="74" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleCallout"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="buttonSave:" destination="wt9-vP-Gxq" eventType="touchUpInside" id="hse-Iv-ri0"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="tue-Wf-krY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="e83-Hi-hiU" firstAttribute="top" secondItem="CAh-Bu-EdB" secondAttribute="bottom" constant="8" id="3h0-nk-3bh"/>
-                            <constraint firstItem="tue-Wf-krY" firstAttribute="bottom" secondItem="e83-Hi-hiU" secondAttribute="bottom" constant="39" id="IPZ-Va-jAZ"/>
-                            <constraint firstItem="CAh-Bu-EdB" firstAttribute="top" secondItem="tue-Wf-krY" secondAttribute="top" constant="15" id="Kml-eG-hlQ"/>
-                            <constraint firstItem="tue-Wf-krY" firstAttribute="trailing" secondItem="CAh-Bu-EdB" secondAttribute="trailing" constant="74" id="mCg-SQ-HRc"/>
-                            <constraint firstItem="e83-Hi-hiU" firstAttribute="centerX" secondItem="HWo-7g-bu5" secondAttribute="centerX" id="tXm-HG-btT"/>
-                            <constraint firstItem="CAh-Bu-EdB" firstAttribute="leading" secondItem="tue-Wf-krY" secondAttribute="leading" constant="50" id="yCQ-u3-10L"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="0NL-C8-pqV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PRT-Fb-o3r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1664" y="579"/>
         </scene>
         <!--NewNoteView-->
         <scene sceneID="lE3-LK-SPh">
@@ -177,6 +124,9 @@
             <point key="canvasLocation" x="-23.188405797101453" y="63.616071428571423"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="M3o-cr-y4a"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

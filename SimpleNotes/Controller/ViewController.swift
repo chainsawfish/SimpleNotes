@@ -10,8 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    // reference to context
-    //    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     
     var notes : [NoteData]?
     var loadedTitle : String = ""
@@ -78,8 +77,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         let currentNote = notes![indexPath.row]
         loadedText = currentNote.text!
         loadedTitle = currentNote.title!
-        print("\(loadedTitle)  \(loadedText)")
-    
 
         self.performSegue(withIdentifier: "mainToOldNote", sender: self)
     }
@@ -89,6 +86,15 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 
 // MARK: here are functions for VC
 extension ViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mainToOldNote" {
+            if let dvc = segue.destination as? NewNoteController {
+            dvc.tempTitle = loadedTitle
+            dvc.tempText = loadedText
+        }
+    }
+    }
     
     func fetchData() {
         do {
@@ -107,6 +113,7 @@ extension ViewController {
         }
     }
 }
+
 
 
 
