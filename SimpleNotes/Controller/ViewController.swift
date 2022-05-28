@@ -11,9 +11,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // reference to context
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    //    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var notes : [NoteData]?
+    var loadedTitle : String = ""
+    var loadedText : String = ""
     
     // MARK: reload all cells after creating or editing notes
     override func viewWillAppear(_ animated: Bool) {
@@ -24,10 +26,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: "CustomViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         fetchData()
 
-        tableView.register(UINib(nibName: "CustomViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
         
     }
     
@@ -35,16 +37,18 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "mainToNewNote", sender: self)
     }
     
-   
+    
     
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: load tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes?.count ?? 0
     }
     
+    // MARK: load tableView with custom cell via xib file
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomViewCell
         guard let singleNote = self.notes?[indexPath.row] else {return cell}
@@ -67,16 +71,25 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         }
         return UISwipeActionsConfiguration(actions: [action])
     }
+    
     //MARK: select row to edit
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO: prepare for seague and set data, and make vc for note
-        performSegue(withIdentifier: "mainToNote", sender: self)
+        //TODO: load selected cell in edit mode and close it to save
+        let currentNote = notes![indexPath.row]
+        loadedText = currentNote.text!
+        loadedTitle = currentNote.title!
+        print("\(loadedTitle)  \(loadedText)")
+    
+
+        self.performSegue(withIdentifier: "mainToOldNote", sender: self)
     }
+    
     
 }
 
 // MARK: here are functions for VC
 extension ViewController {
+    
     func fetchData() {
         do {
             self.notes = try Constants.context.fetch(NoteData.fetchRequest())
@@ -94,3 +107,6 @@ extension ViewController {
         }
     }
 }
+
+
+
