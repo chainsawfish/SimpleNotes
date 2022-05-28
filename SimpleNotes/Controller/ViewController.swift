@@ -10,6 +10,13 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var buttonPlus: UIButton!{
+        didSet{
+            buttonPlus.layer.shadowOffset = CGSize(width: 0, height: 3)
+            buttonPlus.layer.shadowRadius = 3
+            buttonPlus.layer.shadowOpacity = 0.5
+        }
+    }
     
     
     var notes : [NoteData]?

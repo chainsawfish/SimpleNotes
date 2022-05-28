@@ -13,7 +13,13 @@ class NewNoteController: UIViewController {
     var tempText = ""
     @IBOutlet weak var newNoteTitle: UITextField!
     @IBOutlet weak var noteTextField: UITextView!
-    
+    @IBOutlet weak var buttonSave: UIButton!{
+        didSet{
+            buttonSave.layer.shadowOffset = CGSize(width: 0, height: 4)
+            buttonSave.layer.shadowRadius = 5
+            buttonSave.layer.shadowOpacity = 0.5
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +31,7 @@ class NewNoteController: UIViewController {
 
     }
     
-    
+    // TODO: need to fix saving duplicates
     func saveNote() {
         let newNote = NoteData(context: Constants.context)
         newNote.title = newNoteTitle.text
@@ -38,6 +44,8 @@ class NewNoteController: UIViewController {
         }
     }
     
+    
+    // MARK: forming existing note after clicking at cell
     override func viewWillAppear(_ animated: Bool) {
         newNoteTitle.text = tempTitle
         noteTextField.text = tempText
